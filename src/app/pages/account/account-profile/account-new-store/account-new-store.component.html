@@ -1,0 +1,1949 @@
+  <!--=====================================
+                Nav Account
+                ======================================--> 
+   
+                <div class="ps-section__content">
+
+                     <ul class="ps-section__links">
+                        <li><a href="/account">Favoritos</a></li>
+                        <li><a href="/account/my-shopping">Mis Compras</a></li>
+                        <li class="active"><a href="account/new-store">Tienda</a></li>
+                        <li><a href="my-account_my-sales.html">Ventas</a></li>
+                    </ul>
+
+                    <!--=====================================
+                    New Store
+                    ======================================--> 
+                     <div class="ps-page__content text-center row">
+
+                        <div class="container">
+
+                            <div class="ps-section__header">
+
+                                <h1>New to MarketPlace?</h1>
+
+                                <h4>Join a marketplace where nearly 50 million buyers around <br> the world shop for unique items</h4>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-lg-4 col-12">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+                                    
+                                            <img src="{{path}}img/shop-1.jpg" class="img-fluid">
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <button 
+                                            data-toggle="tab"
+                                            href="#terms"
+                                            class="btn btn-warning btn-lg"
+                                            (click)="goTerms()">
+                                                <span class="badge badge-secondary">1</span>Aceptar Terminos y Condiciones</button>
+                                        
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 col-12">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+                                    
+                                            <img src="{{path}}img/shop-2.jpg" class="img-fluid">
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <button 
+                                            [disabled]="!accept"
+                                            class="btn btn-warning btn-lg">
+                                                <span class="badge badge-secondary">2</span>Crear Tienda</button>
+                                        
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                 <div class="col-lg-4 col-12">
+
+                                    <div class="card">
+
+                                        <div class="card-body">
+                                    
+                                            <img src="{{path}}img/shop-3.jpg" class="img-fluid">
+
+                                        </div>
+
+                                        <div class="card-footer text-center">
+
+                                            <button 
+                                            [disabled]="!storeOK"
+                                            class="btn btn-warning btn-lg">
+                                             <span class="badge badge-secondary">3</span>Crear Producto</button>
+                                        
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div><!--Row-->
+
+                            <!--=========================================
+                            Formulario para crear tienda y producto 274
+                           =============================================-->
+
+                           <form
+                           (ngSubmit)="onSubmit(f)" 
+                           #f="ngForm"  
+                           >
+                           <div class="tab-content" id="tabContent">
+
+
+                            <!--=========================================
+                              Terminos y Condiciones 274
+                           =============================================-->
+
+                         <div id="terms" class="container tab-pane fade pt-5">
+
+                                <!--Modal Header 274-->
+                                <div class="modal-header">                                    
+                                    <h4 class="modal-title text-center">1. Terminos y Condiciones</h4>
+                                </div>
+
+                                <!--Modal Body 274-->
+                                <div class="modal-body text-left p-5">
+                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi saepe molestiae similique explicabo aspernatur pariatur. Consequuntur sapiente, accusantium minima voluptatibus, doloribus delectus vel esse deserunt totam ratione officiis neque quod?
+                                     Itaque, eius! Perspiciatis ipsum sit placeat ratione maiores voluptatum deleniti itaque, recusandae mollitia illo inventore cupiditate magnam repudiandae quasi quod officia. Nihil quis in doloribus harum, odit maxime a, distinctio.
+                                     Voluptatem tempore accusantium tempora atque ullam eos maiores aliquam libero sed laboriosam iusto alias explicabo facilis cupiditate esse dolore tenetur aperiam, nisi nobis excepturi. Magni pariatur nam quibusdam autem suscipit.
+                                     Quidem consequuntur rerum suscipit delectus sapiente, optio libero quis iste corporis repellat incidunt, magnam. Cupiditate minima delectus in exercitationem. Eligendi ratione dignissimos culpa beatae illo, consectetur illum laudantium maiores recusandae!
+                                     Fuga consequuntur velit laudantium optio officiis, quaerat molestiae vero. Veritatis eum vitae, explicabo est dolorum molestias magni aspernatur tempora velit vero aliquid iure dolore. Voluptas earum et dolorum reprehenderit eos.
+
+                                     <div class=" form-group my-5">
+
+                                        <div class="ps-checkbox">
+                                       
+                                        <input type="checkbox"
+                                        class="form-control"
+                                        id="accept"
+                                        name="accept"
+                                        [(ngModel)]="accept"    
+                                        (change)="changeAccept()"
+                                        >
+
+                                        <label for="accept">Aceptar Terminos y Condiciones</label>
+
+                                        </div>
+
+                                     </div>
+
+                                     <label class="text-danger"><sup>*</sup>Requerido</label>
+
+                                </div>
+
+
+                        </div>
+
+                             <!--==========================
+                                Crear Tienda 275
+                             ==============================-->  
+
+                             <div id="createStore" class="container tab-pane fade">
+
+                                 <!--Modal Header 275-->
+                                <div class="modal-header">                                    
+                                    <h4 class="modal-title text-center">2. Crear Tienda</h4>
+                                </div>
+
+                                <!--Modal Body 275-->
+                                <div class="modal-body p-5 text-lef">
+
+                                     <!--==========================
+                                       Nombre de la  Tienda 275
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Nombre de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formStore"
+                                            name="storeName"
+                                            pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]{1,}"
+                                            [(ngModel)]="store.store"                                           
+                                            (change)="validate(storeName)"
+                                            #storeName
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                      <!--==========================
+                                      URL de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>URL de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formStore"
+                                            name="storeUrl"
+                                            [(ngModel)]="store.url"
+                                            readonly
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                      <!--==========================
+                                       Informacion de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Informacion de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <textarea
+                                            class="form-control formStore"
+                                            rows="7"
+                                            placeholder="Informacion de tu Tienda MAXIMO 1000 Caracteres"
+                                            name="storeAbout"
+                                            pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,1000}"
+                                            [(ngModel)]="store.about"
+                                            (change)="validate(about)"
+                                            #about
+                                            required></textarea>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                       <!--==========================
+                                          Email de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Email de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="email"
+                                            class="form-control formStore"
+                                            name="storeEmail"
+                                            [(ngModel)]="store.email"
+                                            email
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                           <!--==========================
+                                          Pais de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Pais de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <select
+                                            class="form-control formStore"
+                                            name="storeCountry"
+                                            [(ngModel)]="store.country"     
+                                            (change)="changeCountry(inputCountry)"
+                                            #inputCountry                                      
+                                            required>
+
+                                                <option 
+                                                *ngFor="let country of countries"
+                                                [value]="country.name">{{country.name}}</option>
+
+                                           </select>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                      <!--==========================
+                                          Ciudad de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Ciudad de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formStore"
+                                            name="storeCity"
+                                            pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ ]{1,}"
+                                            [(ngModel)]="store.city"  
+                                            (change)="validate(city)"
+                                            #city                                          
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                      <!--==========================
+                                          telefono de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Telefono de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content input-group">
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">{{dialCode}}</span>
+                                            </div>
+                                             
+                                            <input type="text"
+                                            class="form-control formStore"
+                                            name="storePhone"
+                                            pattern="[-\\0-9 ]{1,}"
+                                            [(ngModel)]="store.phone"  
+                                            (change)="validate(phone)"
+                                            #phone                                        
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                        <!--==========================
+                                          Direccion de la  Tienda 277
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Direccion de la Tienda<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formStore"
+                                            name="storeAddress"
+                                            pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,1000}"
+                                            [(ngModel)]="store.address"  
+                                            (change)="validate(address)"
+                                            #address                                           
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                      <!--==========================
+                                       Logo de la Tienda 283
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                        <label> Logo de Tienda<sup class="text-danger">*</sup></label>
+
+                                        <div class="form-group__content">
+
+                                            <label class="pb-5" for="storeLogo">
+                                                <img src="{{store.logo}}" class="img-fluid changeLogo" style="width:150px">
+                                            </label>
+
+                                            <div class="custom-file">
+                                                
+                                                <input type="file"
+                                                class="custom-file-input formStore"
+                                                id="storeLogo"
+                                                accept="image/*"
+                                                maxSize="4000000"
+                                                (change)="validateImage($event, 'changeLogo')"
+                                                required>
+
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Completa este Campo</div>
+
+                                                <label class="custom-file-label" for="storeLogo">Buscar Archivo</label>
+
+                                            </div>
+
+
+                                        </div>
+
+                                      </div>                                      
+
+                                       <!--==========================
+                                       Portada de la Tienda 284
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                        <label> Portada de Tienda<sup class="text-danger">*</sup></label>
+
+                                        <div class="form-group__content">
+
+                                            <label class="pb-5" for="storeCover">
+                                                <img src="{{store.cover}}" class="img-fluid changeCover">
+                                            </label>
+
+                                            <div class="custom-file">
+                                                
+                                                <input type="file"
+                                                class="custom-file-input formStore"
+                                                id="storeCover"
+                                                accept="image/*"
+                                                maxSize="4000000"
+                                                (change)="validateImage($event, 'changeCover')"
+                                                required>
+
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Completa este Campo</div>
+
+                                                <label class="custom-file-label" for="storeCover">Buscar Archivo</label>
+
+                                            </div>
+
+
+                                        </div>
+
+                                      </div>
+
+                                        <!--==========================
+                                        Redes Sociales de la Tienda 285
+                                      ==============================-->  
+
+                                      <div class="form-group">
+                                          
+                                           <label>Redes Sociales</label>
+
+                                       <!--==========================
+                                         Facebook 285
+                                      ==============================-->  
+
+                                           <div class="form-group__content input-group mb-5">
+                                               
+                                            <div class="input-group-append">
+                                                 <span class="input-group-text">https://facebook.com</span> 
+                                            </div>
+
+                                            <input type="text"
+                                            class="form-control"
+                                            name="facebook"
+                                            social="socialNetwork"
+                                            pattern="[-\\_\\.\\0-9a-zA-Z]{1,}"
+                                            [(ngModel)]="social['facebook']"
+                                            (change)="validate(facebook)"
+                                            #facebook
+                                            >
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                           </div>
+
+                                           
+                                     <!--==========================
+                                         Instagram 285
+                                      ==============================-->  
+
+                                           <div class="form-group__content input-group mb-5">
+                                               
+                                            <div class="input-group-append">
+                                                 <span class="input-group-text">https://instagram.com</span> 
+                                            </div>
+
+                                            <input type="text"
+                                            class="form-control"
+                                            name="instagram"
+                                            social="socialNetwork"
+                                            [(ngModel)]="social['instagram']"
+                                            pattern="[-\\_\\.\\0-9a-zA-Z]{1,}"
+                                            (change)="validate(instagram)"
+                                            #instagram
+                                            >
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                           </div>
+
+                                      <!--==========================
+                                         Twitter 285
+                                      ==============================-->  
+
+                                           <div class="form-group__content input-group mb-5">
+                                               
+                                            <div class="input-group-append">
+                                                 <span class="input-group-text">https://twitter.com</span> 
+                                            </div>
+
+                                            <input type="text"
+                                            class="form-control"
+                                            name="twitter"
+                                            social="socialNetwork"
+                                            pattern="[-\\_\\.\\0-9a-zA-Z]{1,}"
+                                            [(ngModel)]="social['twitter']"
+                                            (change)="validate(twitter)"
+                                            #twitter
+                                            >
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                           </div>
+
+                                            <!--==========================
+                                         linkedin 285
+                                      ==============================-->  
+
+                                           <div class="form-group__content input-group mb-5">
+                                               
+                                            <div class="input-group-append">
+                                                 <span class="input-group-text">https://linkedin.com</span> 
+                                            </div>
+
+                                            <input type="text"
+                                            class="form-control"
+                                            name="linkedin"
+                                            social="socialNetwork"
+                                            pattern="[-\\_\\.\\0-9a-zA-Z]{1,}"
+                                            [(ngModel)]="social['linkedin']"
+                                             (change)="validate(linkedin)"
+                                            #linkedin
+                                            >
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                           </div>
+
+                                            <!--==========================
+                                         youtube 285
+                                      ==============================-->  
+
+                                           <div class="form-group__content input-group mb-5">
+                                               
+                                            <div class="input-group-append">
+                                                 <span class="input-group-text">https://youtube.com</span> 
+                                            </div>
+
+                                            <input type="text"
+                                            class="form-control"
+                                            name="youtube"
+                                            social="socialNetwork"
+                                            pattern="[-\\_\\.\\0-9a-zA-Z]{1,}"
+                                            [(ngModel)]="social['youtube']"
+                                            (change)="validate(youtube)"
+                                            #youtube
+                                            >
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                           </div>
+
+                                      </div>
+
+                                 </div>
+
+                                  <!--Modal footer 275-->
+                                  <div class="modal-footer">
+                                      <button 
+                                      [disabled]="!accept" 
+                                      type="button" 
+                                      class="btn btn-warning"                                      
+                                      (click)="createProduct()">Siguiente</button>
+                                  </div>
+
+                             </div> 
+
+
+                               <!--==========================
+                                Crear Producto 275
+                             ==============================-->  
+
+                             <div id="createProduct" class="container tab-pane fade">
+
+                                 <!--Modal Header 275-->
+                                <div class="modal-header">                                    
+                                    <h4 class="modal-title text-center">3. Crear Producto</h4>
+                                </div>
+
+                                <!--Modal Body 275-->
+                                <div class="modal-body p-5 text-lef">**
+
+                                   
+                                     <!--==========================
+                                       Nombre del producto 287
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>Nombre del Producto<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formProduct"
+                                            name="productName"
+                                            pattern="[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]{1,}"
+                                            [(ngModel)]="product.name"                                           
+                                            (change)="validate(productName)"
+                                            #productName
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                      <!--==========================
+                                      URL del producto 287
+                                      ==============================-->  
+
+                                      <div class="form-group">
+
+                                         <label>URL del Producto<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <input type="text"
+                                            class="form-control formProduct"
+                                            name="productUrl"
+                                            [(ngModel)]="product.url"
+                                            readonly
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div>  
+
+                                      <!--==========================
+                                        Categoria del producto 288
+                                      ==============================--> 
+
+                                      <div class="form-group">
+
+                                         <label>Categoria del Producto<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <select
+                                            class="form-control formProduct"
+                                            name="productCategory"
+                                            [(ngModel)]="product.category"     
+                                            (change)="changeCategory(inputCategory)"
+                                            #inputCategory                                      
+                                            required>
+
+                                                <option 
+                                                *ngFor="let category of categories"
+                                                [value]="category.name+'_'+category.url">{{category.name}}</option>
+
+                                           </select>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                         <!--==========================
+                                        SubCategorias del producto 288
+                                      ==============================-->
+
+                                      <div 
+                                      *ngIf="subcategories.length > 0"
+                                      class="form-group">
+
+                                         <label>Subcategoria del Producto<sup class="text-danger">*</sup></label>
+
+                                         <div class="form-group__content">
+                                             
+                                            <select
+                                            class="form-control formProduct"
+                                            name="productSubCategory"
+                                            [(ngModel)]="product.sub_category"  
+                                            required>
+
+                                                <option 
+                                                *ngFor="let subcategory of subcategories"
+                                                [value]="subcategory.url+'_'+subcategory.title_list">{{subcategory.name}}</option>
+
+                                           </select>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Completa este Campo</div>
+
+                                         </div>
+
+                                      </div> 
+
+                                        <!--==========================
+                                        Descripcion del producto 289
+                                      ==============================-->
+
+                                      <div class="form-group">
+                                          
+                                          <label>Descripcion del Producto<sup class="text-danger">*</sup></label>
+
+                                          <textarea 
+                                          class="formProduct" 
+                                          name="productDescription" 
+                                          [(ngModel)]="product.description"
+                                          [ngxSummernote]="config"
+                                          required></textarea>
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                      </div>
+
+                                       <!--==========================
+                                        Resumen del producto 290
+                                      ==============================-->
+
+                                      <div class="form-group">
+                                            
+                                            <label>Resumen del Producto<sup class="text-danger">*</sup>Ejemplo: Breve descripcion del funcionamiento del producto</label>
+
+                                            <div 
+                                            *ngFor="let inputSummary of summaryGroup; let i = index"
+                                            class="form-group__content input-group mb-3">
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <button type="button" class="btn btn-danger" (click)="removeInput(i, 'summary')">&times;</button>
+                                                </span>
+                                            </div>
+                                                    
+                                                <input
+                                                class="form-control formProduct"
+                                                type="text"
+                                                name="input_{{i}}"
+                                                [(ngModel)]="inputSummary.input"
+                                                required
+                                                >
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                            </div>
+
+                                            <button type="button" class="btn btn-primary mb-2" (click)="addInput('summary')">Agregar Resumen</button>
+
+                                      </div>
+
+                                     
+
+                                         <!--==========================
+                                        Detalles del producto 292
+                                      ==============================-->
+
+                                      <div class="form-group">
+                                            
+                                            <label>Detalles del Producto<sup class="text-danger">*</sup> Ex: <strong>Titulo:</strong> Bluetooth, <strong>Valor:</strong> Yes</label>
+
+                                              <div 
+                                             *ngFor="let inputDetail of detailsGroup; let i = index"
+                                             class="row mb-3">
+
+                                  <!--==============================================
+                                       Entrada para el titulo del detalle 292
+                                      ============================================-->
+
+                                            <div class="col-12 col-lg-6 form-group__content input-group">
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <button type="button" class="btn btn-danger" (click)="removeInput(i,'details')">&times;</button>
+                                                </span>
+                                            </div>
+
+                                               <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                     Titulo:
+                                                   </span>
+                                              </div>        
+                                                    
+                                                <input
+                                                class="form-control formProduct"
+                                                type="text"
+                                                name="title_{{i}}"
+                                                [(ngModel)]="inputDetail.title"
+                                                required
+                                                >
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                            </div>
+
+                                          <!--==============================================
+                                       Entrada para el Valor del detalle 292
+                                      ============================================-->
+                                             <div class="col-12 col-lg-6 form-group__content input-group">
+
+                                            
+                                               <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                     Valor:
+                                                   </span>
+                                              </div>        
+                                                    
+                                                <input
+                                                class="form-control formProduct"
+                                                type="text"
+                                                name="value_{{i}}"
+                                                [(ngModel)]="inputDetail.value"
+                                                required
+                                                >
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                            </div>
+
+                                         </div>
+
+                                            <button type="button" class="btn btn-primary mb-2" (click)="addInput('details')">Agregar Detalle</button>
+
+                                      </div>
+
+
+                                       <!--==========================
+                                        Especificaciones del producto 293
+                                      ==============================-->
+
+                                   <div class="form-group">
+                                            
+                                          <label>Especificaciones del Producto Ejemplo: <strong>Tipo:</strong> Color, <strong>Valor:</strong> Rojo, verde</label>
+
+                                <div 
+                                *ngFor="let inputSpecification of specificationsGroup; let i = index"
+                                class="row mb-3">
+
+                                  <!--==============================================
+                                       Entrada para el titulo de especificacion 293
+                                      ============================================-->
+
+                                         <div class="col-12 col-lg-6 form-group__content input-group">
+
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <button type="button" class="btn btn-danger" (click)="removeInput(i,'specifications')">&times;</button>
+                                                </span>
+                                            </div>
+
+                                               <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                     Tipo:
+                                                   </span>
+                                              </div>        
+                                                    
+                                                <input
+                                                class="form-control"
+                                                type="text"
+                                                name="type_{{i}}"
+                                                [(ngModel)]="inputSpecification.type"                                                
+                                                >
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                            </div>
+
+                                          <!--==============================================
+                                       Entrada para el Valor del detalle 292
+                                      ============================================-->
+                                             <div class="col-12 col-lg-6 form-group__content input-group">
+
+                                            
+                                               <div class="input-group-append">
+                                                  <span class="input-group-text">
+                                                     Valor:
+                                                   </span>
+                                              </div>        
+                                                    
+                                                <tag-input
+                                                class="form-control"
+                                                type="text"
+                                                name="values_{{i}}"
+                                                [(ngModel)]="inputSpecification.values"
+                                                [maxItems]='5'                                               
+                                                ></tag-input>
+
+                                           <div class="valid-feedback">Valid.</div>
+                                           <div class="invalid-feedback">Completa este Campo</div>
+
+                                            </div>
+
+                                         </div>
+
+                                            <button type="button" class="btn btn-primary mb-2" (click)="addInput('specifications')">Agregar Especificaicones</button>
+
+                                      </div>
+
+                             <!--=====================================
+                                Palabras claves del producto 294
+                            ======================================--> 
+                                   <div class="form-group">
+                                
+                                <label>Palabras clave del Producto<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content">
+
+                                    <tag-input
+                                    class="form-control formProduct" 
+                                    type="text"
+                                    name="productTags"
+                                    [(ngModel)]="tags"
+                                    [maxItems]='5'
+                                    required
+                                    ></tag-input>
+
+                                    <div class="valid-feedback">Valid.</div>
+                                    <div class="invalid-feedback">Campo Requerido</div>
+
+                                </div>
+
+                            </div>
+
+                             <!--=====================================
+                            Imagen del producto
+                            ======================================-->
+                              <div class="form-group">
+                               
+                               <label>Imagen del Producto<sup class="text-danger">*</sup></label> 
+
+                                <div class="form-group__content">
+                                    
+                                   <label class="pb-5" for="productImage">
+                                       <img src="{{product.image}}" class="img-fluid changeImage">
+                                   </label> 
+
+                                   <div class="custom-file">
+                                       
+                                        <input type="file"
+                                        class="custom-file-input formProduct"
+                                        id="productImage"
+                                        accept="image/*"
+                                        maxSize="4000000"
+                                        (change)="validateImage($event, 'changeImage')"
+                                        required>
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                        <label class="custom-file-label" for="productImage">Buscar Archivo</label>
+                                 
+                                   </div>
+
+                                </div>
+
+                            </div>
+
+                              <!--=====================================
+                            Galeria del producto 296
+                            ======================================-->
+
+                             <label>Product Gallery<sup class="text-danger">*</sup></label>   
+                            
+                            <div class="custom-dropzone mb-5"
+                            ngx-dropzone
+                            [accept]="'image/*'"
+                            (change)="onSelect($event)">
+
+                                <ngx-dropzone-label>
+                                    
+                                    <div>
+                                        <h2 class="text-muted">Drop your files here, size 1000px * 1000px</h2>
+                                    </div>
+
+                                </ngx-dropzone-label>
+
+                                <ngx-dropzone-image-preview
+                                ngProjectAs="ngx-dropzone-preview"
+                                *ngFor="let f of gallery"
+                                [file]="f"
+                                [removable]="true"
+                                (removed)="onRemove(f)">
+                                   
+                                   <ngx-dropzone-label>
+                                       {{f.name }} {{f.type}}
+                                   </ngx-dropzone-label> 
+
+                                </ngx-dropzone-image-preview>  
+                                
+                            </div>
+
+                              <!--=====================================
+                              Banner Top del producto 297
+                            ======================================-->
+
+                        <div class="form-group">
+                                
+                            <label> Top Banner del Producto <sup class="text-danger">*</sup>, Ejemplo:</label>    
+
+                            <figure class="pb-5">
+                                
+                                <img src="{{path}}img/products/default/example-top-banner.png" class="img-fluid">
+
+                            </figure>
+
+                            <div class="row mb-3">
+                                
+                                  <!--=====================================
+                                    H3 Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H3 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: 20%"
+                                        name="topBannerH3Tag"
+                                        [(ngModel)]="topBanner['H3 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerH3Tag)" 
+                                        #topBannerH3Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                       <!--=====================================
+                                    P1 Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                P1 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: Disccount"
+                                        name="topBannerP1Tag"
+                                        [(ngModel)]="topBanner['P1 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerP1Tag)" 
+                                        #topBannerP1Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                    <!--=====================================
+                                    H4 Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H4 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: For Books Of March"
+                                        name="topBannerH4Tag"
+                                        [(ngModel)]="topBanner['H4 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerH4Tag)" 
+                                        #topBannerH4Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                    <!--=====================================
+                                    P2 Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                P2 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: Enter Promotion"
+                                        name="topBannerP2Tag"
+                                        [(ngModel)]="topBanner['P2 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerP2Tag)" 
+                                        #topBannerP2Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                    <!--=====================================
+                                    Span Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Span Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: Sale2019"
+                                        name="topBannerSpanTag"
+                                        [(ngModel)]="topBanner['Span tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerSpanTag)" 
+                                        #topBannerSpanTag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                    <!--=====================================
+                                    Button Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Button Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ejemplo: Shop now"
+                                        name="topBannerButtonTag"
+                                        [(ngModel)]="topBanner['Button tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(topBannerButtonTag)" 
+                                        #topBannerButtonTag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+
+                                    <!--=====================================
+                                    IMG Tag
+                                    ======================================-->
+
+                                    <div class="form-group">
+
+                                        <label>IMG Tag:</label>
+
+                                        <div class="form-group__content">
+
+                                            <label class="pb-3" for="topBanner">
+
+                                                <img src="{{topBanner['IMG tag']}}" class="img-fluid changeTopBanner">
+
+                                            </label>
+
+                                            <div class="custom-file">
+
+                                                <input type="file" 
+                                                class="custom-file-input formProduct" 
+                                                id="topBanner"
+                                                accept="image/*"
+                                                maxSize="2000000"
+                                                (change)="validateImage($event,'changeTopBanner')"
+                                                required>
+
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Campo Requerido</div>
+
+                                                <label class="custom-file-label" for="topBanner">Buscar Archivo</label>
+
+                                            </div>            
+                                            
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                     <!--=====================================
+                        Banner por defecto del producto 298
+                     ======================================-->
+
+
+                            <div class="form-group">
+
+                                <label>Default Banner<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content">
+
+                                    <label class="pb-5" for="productDefaultBanner">
+
+                                        <img src="{{product.default_banner}}" class="img-fluid changeDefaultBanner" style="width:500px">
+
+                                    </label>
+
+                                    <div class="custom-file">
+
+                                        <input type="file" 
+                                        class="custom-file-input formProduct" 
+                                        id="productDefaultBanner"
+                                        accept="image/*"
+                                        maxSize="2000000"
+                                        (change)="validateImage($event,'changeDefaultBanner')"
+                                        required>
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                        <label class="custom-file-label" for="productDefaultBanner">Buscar Archivo</label>
+
+                                    </div>     
+                                    
+                                </div>
+
+                            </div>
+
+                          
+
+                             <!--=====================================
+                              Slide Horizontla del producto 299
+                            ======================================-->
+
+                        <div class="form-group">
+                                
+                            <label>Horizontal Slider<sup class="text-danger">*</sup>, Ejemplo:</label>    
+
+                            <figure class="pb-5">
+                                
+                                <img src="{{path}}img/products/default/example-horizontal-slider.png" class="img-fluid">
+
+                            </figure>
+
+                            <div class="row mb-3">
+                                
+                                  <!--=====================================
+                                    H4 Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H4 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: Limit Edition"
+                                        name="hSliderH4Tag"
+                                        [(ngModel)]="hSlider['H4 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderH4Tag)" 
+                                        #hSliderH4Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido</div>
+
+                                    </div>
+
+                                     <!--=====================================
+                                    H3-1 Tag 299
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H3-1 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: Happy Summer"
+                                        name="hSliderH3_1Tag"
+                                        [(ngModel)]="hSlider['H3-1 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderH3_1Tag)" 
+                                        #hSliderH3_1Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                    </div>
+
+                                     <!--=====================================
+                                    H3-2 Tag 299
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H3-2 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: Combo Super Cool"
+                                        name="hSliderH3_2Tag"
+                                        [(ngModel)]="hSlider['H3-2 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderH3_2Tag)" 
+                                        #hSliderH3_2Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                    </div>
+
+                                     <!--=====================================
+                                    H3-3 Tag 299
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H3-3 Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: Up to"
+                                        name="hSliderH3_3Tag"
+                                        [(ngModel)]="hSlider['H3-3 tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderH3_3Tag)" 
+                                        #hSliderH3_3Tag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                    </div>
+
+                                     <!--=====================================
+                                    H3-4s Tag
+                                    ======================================-->
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                H3-4s Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: 40%"
+                                        name="hSliderH3_4sTag"
+                                        [(ngModel)]="hSlider['H3-4s tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderH3_4sTag)" 
+                                        #hSliderH3_4sTag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                    </div>
+
+
+                                    <!--=====================================
+                                    Button Tag 299
+                                    ======================================-->
+
+                                   <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0 mb-3">
+
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Button Tag:
+                                            </span>
+                                        </div>
+
+                                        <input type="text"
+                                        class="form-control formProduct"
+                                        placeholder="Ex: Shop now"
+                                        name="hSliderButtonTag"
+                                        [(ngModel)]="hSlider['Button tag']"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,50}"
+                                        maxlength="50"
+                                        (change)="validate(hSliderButtonTag)" 
+                                        #hSliderButtonTag
+                                        tags="tags"
+                                        required
+                                        >
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                    </div>
+
+                                    <!--=====================================
+                                    IMG Tag
+                                    ======================================-->
+
+                                    <div class="form-group">
+
+                                        <label>IMG Tag:</label>
+
+                                        <div class="form-group__content">
+
+                                            <label class="pb-3" for="hSlider">
+
+                                                <img src="{{hSlider['IMG tag']}}" class="img-fluid changeHSlider">
+
+                                            </label>
+
+                                            <div class="custom-file">
+
+                                                <input type="file" 
+                                                class="custom-file-input formProduct" 
+                                                id="hSlider"
+                                                accept="image/*"
+                                                maxSize="2000000"
+                                                (change)="validateImage($event,'changeHSlider')"
+                                                required>
+
+                                                <div class="valid-feedback">Valid.</div>
+                                                <div class="invalid-feedback">Campo Requerido.</div>
+
+                                                <label class="custom-file-label" for="hSlider">Buscar Archivos</label>
+
+                                            </div>            
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div> 
+
+                            
+                            <!--=====================================
+                        Slide Vertical del producto 300
+                     ======================================-->
+
+
+                           <div class="form-group">
+
+                                <label>Vertical Slider<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content">
+
+                                    <label class="pb-5" for="vSlider">
+
+                                        <img src="{{product.vertical_slider}}" class="img-fluid changeVSlider" style="width:260px">
+
+                                    </label>
+
+                                    <div class="custom-file">
+
+                                        <input type="file" 
+                                        class="custom-file-input formProduct" 
+                                        id="vSlider"
+                                        accept="image/*"
+                                        maxSize="2000000"
+                                        (change)="validateImage($event,'changeVSlider')"
+                                        required>
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>
+
+                                        <label class="custom-file-label" for="vSlider">Buscar Archivos</label>
+
+                                    </div>     
+                                    
+                                </div>
+
+                            </div>
+
+                     <!--=====================================
+                        Video del producto 301
+                     ======================================-->
+
+
+
+                            <div class="form-group">
+                               
+                               <label>Video del Producto, Ejemplo: <strong>Tipo:</strong> YouTube, <strong>Id:</strong> Sl5FaskVpD4</label> 
+
+                               <div class="row mb-3">
+                                   
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0">
+                                        
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Tipo:
+                                            </span>
+                                        </div>
+
+                                        <select 
+                                        class="form-control"                               
+                                        name="type_video"
+                                        [(ngModel)]="video[0]"
+                                        >
+                                            
+                                            <option value="youtube">YouTube</option>
+                                            <option value="vimeo">Vimeo</option>
+
+                                        </select>
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>             
+
+
+                                    </div>
+
+                                    <div class="col-12 col-lg-6 form-group__content input-group mx-0 pr-0">
+                                        
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Id:
+                                            </span>
+                                        </div>
+
+                                        <input
+                                        class="form-control"                               
+                                        name="id_video"
+                                        [(ngModel)]="video[1]"
+                                        pattern="[-\\(\\)\\=\\%\\&\\$\\;\\_\\*\\'\\#\\?\\¿\\!\\¡\\:\\,\\.\\0-9a-zA-ZñÑáéíóúÁÉÍÓÚ ]{1,100}"
+                                        maxlength="100"
+                                        tags="tags"
+                                        (change)="validate(id_video)"
+                                        #id_video
+                                        >
+        
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>             
+
+
+                                    </div>
+
+                               </div>
+
+                            </div>
+
+
+                    <!--================================================================
+                       Precio de venta, precio de envio, dias de entrega y stock 302
+                     ===================================================================-->
+
+                     <div class="form-group"> 
+
+                        <div class="row mb-3">
+
+                    <!--================================================================
+                       Precio de venta 302
+                     ===================================================================-->
+
+                            <div class="col-12 col-lg-3">
+                                
+                                <label>Precio del Producto<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content input-group mx-0 pr-0">  
+
+                                 <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    Precio $:
+                                                </span>
+                                            </div>
+
+                                          <input type="number"
+                                            class="form-control formProduct"
+                                            name="price"
+                                            [(ngModel)]="product.price"
+                                            min="0"
+                                            step="any"
+                                            pattern="[.\\,\\0-9]{1,}"
+                                            (change)="validate(price)"
+                                            #price
+                                            tags="prices"
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Campo Requerido.</div> 
+
+                                </div>            
+                                                    
+                            </div>
+
+                    <!--================================================================
+                       precio de envio 302
+                     ===================================================================-->
+
+                        
+                             <div class="col-12 col-lg-3">
+                                
+                                <label>Precio de Envio<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content input-group mx-0 pr-0">  
+
+                                 <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    Precio de Envio $:
+                                                </span>
+                                            </div>
+
+                                          <input type="number"
+                                            class="form-control formProduct"
+                                            name="shipping"
+                                            [(ngModel)]="product.shipping"
+                                            min="0"
+                                            step="any"
+                                            pattern="[.\\,\\0-9]{1,}"
+                                            (change)="validate(shipping)"
+                                            #shipping
+                                            tags="prices"                                           
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Campo Requerido.</div> 
+
+
+                              </div>              
+
+                            </div>
+
+                      <!--================================================================
+                        Dias de Entrega del Producto 302
+                     ===================================================================-->
+
+                           
+                             <div class="col-12 col-lg-3">
+                                
+                                <label>Tiempo de Entrega del Producto<sup class="text-danger">*</sup></label>
+
+                                <div class="form-group__content input-group mx-0 pr-0">  
+
+                                 <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    Dias:
+                                                </span>
+                                            </div>
+
+                                          <input type="number"
+                                            class="form-control formProduct"
+                                            name="delivery_time"
+                                            [(ngModel)]="product.delivery_time"
+                                            min="0"                                         
+                                            pattern="[0-9]{1,}"
+                                            (change)="validate(delivery_time)"
+                                            #delivery_time   
+                                            tags="intNumber"                                         
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Campo Requerido.</div> 
+
+
+                           
+                              </div>              
+
+                            </div>
+
+                             <!--================================================================
+                           Stock 302
+                     ===================================================================-->
+
+                            
+                             <div class="col-12 col-lg-3">
+                                
+                                <label>Stock<sup class="text-danger">*</sup>(Max: 100 Unidades)</label>
+
+                                <div class="form-group__content input-group mx-0 pr-0">  
+
+                                 <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    Stock:
+                                                </span>
+                                            </div>
+
+                                          <input type="number"
+                                            class="form-control formProduct"
+                                            name="stock"
+                                            [(ngModel)]="product.stock"
+                                            min="0"
+                                            max="100"                                         
+                                            pattern="[0-9]{1,}"
+                                            (change)="validate(stock)"
+                                            #stock 
+                                            tags="intNumber"                                           
+                                            required>
+
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Campo Requerido.</div> 
+
+
+                               </div>             
+
+
+                            </div>
+
+
+                        </div>
+
+
+                     </div>
+
+
+
+                          <!--================================================================
+                          Oferta del Producto 303
+                     ===================================================================-->
+
+                        <div class="form-group">
+                            
+
+                             <label>Oferta del Producto: <strong></strong><strong></strong><strong>Selecciona el Tipo de Oferta y la Fecha de Finalizacion de la Oferta:</strong></label>
+
+                             <div class="row mb-3">
+
+                     <!--================================================================
+                         Tipo de  Oferta del Producto 303
+                     ===================================================================-->
+                                 
+                                <div class="col-12 col-lg-4 form-group__content input-group mx-0 pr-0">
+                                    
+
+                                      <div class="input-group-append">
+                                            <span class="input-group-text">
+                                                Tipo de Oferta:
+                                            </span>
+                                        </div>
+
+                                        <select name="text"
+                                        class="form-control"
+                                        name="type_offer"
+                                        [(ngModel)]="offer[0]">
+                                            
+                                            <option value="Disccount">Descuento</option>
+                                            <option value="Fixed">Percio Fijo</option>
+
+                                        </select>
+
+                                          <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>    
+
+                                </div>
+
+                     <!--================================================================
+                          Valor de la oferta 303
+                     ===================================================================-->
+
+                      <div class="col-12 col-lg-4 form-group__content input-group mx-0 pr-0">
+                          
+                                       <div class="input-group-append">
+                                            <span 
+                                            *ngIf="offer[0]=='Disccount'"
+                                            class="input-group-text">
+                                                Porcentaje %:
+                                            </span>
+
+                                            <span 
+                                            *ngIf="offer[0]=='Fixed'"
+                                            class="input-group-text">
+                                                Precio $:
+                                            </span>
+                                        </div>
+
+                                          <input type="number"
+                                        class="form-control"
+                                        name="value_offer"
+                                        [(ngModel)]="offer[1]"
+                                        min="0"
+                                        step="any"
+                                        pattern="[.\\,\\0-9]{1,}"
+                                        (change)="validate(value_offer)"
+                                        #value_offer
+                                        tags="prices">
+
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Campo Requerido.</div>     
+
+                                  </div>
+
+
+                      <!--================================================================
+                          Fecha de Vencimiento de la Oferta 303
+                     ===================================================================-->   
+
+                      <div class="col-12 col-lg-4 form-group__content input-group mx-0 pr-0">
+                          
+
+                         <div class="input-group-append">
+                             <span class="input-group-text">
+                                  Fin de la Oferta:
+                             </span>
+                        </div>
+
+                         <input type="date"
+                                class="form-control"
+                                name="date_offer"
+                                [(ngModel)]="offer[2]">
+
+                                  <div class="valid-feedback">Valid.</div>
+                                  <div class="invalid-feedback">Campo Requerido.</div>  
+
+                      </div>          
+
+                   </div>
+
+              </div>
+
+          </div>
+                   
+                    <!--Modal footer 275-->
+                    <div class="modal-footer">
+
+                                      <div class="form-group submtit">  
+                                           <button 
+                                           [disabled]="!accept"                                       
+                                           class="ps-btn ps-btn--fullwidth">Crear</button>
+
+                                      </div>
+                                  </div>
+
+                             </div> 
+
+                           </div>
+
+                           </form>
+
+                        </div>
+
+                    </div>
+                 
+
+                </div>

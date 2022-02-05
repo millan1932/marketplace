@@ -1,0 +1,137 @@
+                <!--=====================================
+                Nav Account
+                ======================================--> 
+   
+                <div class="ps-section__content">
+
+                    <ul class="ps-section__links">
+                        <li  class="active"><a href="/account">Favoritos</a></li>
+                        <li><a href="/account/my-shopping">Mis Compras</a></li>
+
+                        <li
+                        *ngIf="!is_vendor"
+                        ><a href="/account/new-store">Tienda</a></li>
+
+                          <li
+                        *ngIf="is_vendor"
+                        ><a href="/account/my-store">Tienda</a></li>
+
+                        <li><a href="my-account_my-sales.html">Ventas</a></li>
+                    </ul>
+
+                    <!--=====================================
+                    Wishlist
+                    ======================================--> 
+
+                    <div class="table-responsive">
+
+                        <table class="table ps-table--whishlist dt-responsive" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" width="100%">
+
+                            <thead>
+
+                                <tr>               
+
+                                    <th>Product name</th>
+
+                                    <th>Unit Price</th>
+
+                                    <th>Stock Status</th>
+
+                                    <th></th>
+
+                                    <th></th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr
+                                *ngIf="products.length == 0">
+                                
+                                    <td colspan="3" class="text-center">No existen Productos en tu Lista de Deseos</td>
+                                </tr>
+
+                                <!-- Product -->
+
+                                <tr
+                               *ngFor="let product of products; let i = index; let lastIndex = last"
+                                >
+
+                                    <td>
+                                        <div class="ps-product--cart">
+
+                                            <div class="ps-product__thumbnail">
+
+                                                <a href="product/{{product.url}}">
+
+                                                   <img src="{{path}}img/products/{{product.category}}/{{product.image}}" alt="{{product.name}}">
+
+                                                </a>
+
+                                            </div>
+
+                                             <div class="ps-product__content">
+
+                                                <a href="product/{{product.url}}">
+
+                                                {{product.name}}
+
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="ps-product">
+                                        
+                                         <div [innerHTML]="price[i][0]"></div>
+
+                                    </td>
+
+                                    <td>
+                                        
+                                        <span 
+                                        *ngIf="product.stock == 0"
+                                        class="ps-tag ps-tag--out-stock">Out-stock</span>
+
+                                        <span 
+                                        *ngIf="product.stock > 0"    
+                                        class="ps-tag ps-tag--in-stock">In-stock</span>
+
+                                    </td>
+
+                                    <td>
+                                        <a 
+                                        *ngIf="product.stock >0"
+                                        class="ps-btn" style="cursor:pointer" (click)="addShoppingCart(product.url, 1, [])">
+
+                                    Add to cart
+                                    </a>
+                                  </td>
+
+                                    <td>
+                                        <a 
+                                        mwlConfirmationPopover
+                                        [popoverMessage]="popoverMessage"
+                                        placement="left"
+                                        class="removeProduct" 
+                                        style="cursor:pointer" 
+                                        (confirm)="removeProduct(product.url)"
+                                        [attr.remove]="product.url">
+                                            <i class="icon-cross"></i>
+                                        </a>
+                                    </td>
+                                    {{ lastIndex ? callback() : ""}}
+                                </tr>
+
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
